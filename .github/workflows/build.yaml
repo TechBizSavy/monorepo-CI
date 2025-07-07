@@ -7,7 +7,7 @@ on:
 jobs:
   build:
     name: Build the project
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3      
       - name: Use Node.js
@@ -18,8 +18,8 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Run build
-        run: npm run build 
-
       - name: Generate Prisma Client
         run: cd packages/db && npx prisma generate     
+
+      - name: Run build
+        run: npm run build 
